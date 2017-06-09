@@ -85,9 +85,50 @@ public:
     Card *card_11, *card_12, *card_13, *card_14;
     Card *card_21, *card_22, *card_23, *card_24;
 
+    QPushButton * button1;
+    QPushButton * button2;
+    QPushButton * button3;
+    QPushButton * button4;
+    QPushButton * button5;
+    QPushButton * button6;
+    QPushButton * button7;
+    QPushButton * button8;
+    QPushButton * button9;
+    QPushButton * button10;
+    QPushButton * button11;
+    QPushButton * button12;
+    QPushButton * button13;
+    QPushButton * button14;
+    QPushButton * button15;
+    QPushButton * button16;
+    QPushButton * button17;
+    QPushButton * button18;
+    QPushButton * button19;
+    QPushButton * button20;
 
 public slots:
     void gameInit();
+    void weapon1();
+/*    void weapon2();
+    void weapon3();
+    void weapon4();
+    void weapon5();
+    void weapon6();
+    void weapon7();
+    void weapon8();
+    void weapon9();
+    void weapon10();
+    void weapon11();
+    void weapon12();
+    void weapon13();
+    void weapon14();
+    void weapon15();
+    void weapon16();
+    void weapon17();
+    void weapon18();
+    void weapon19();
+    void weapon20();*/
+
 private:
     int i[20];
 };

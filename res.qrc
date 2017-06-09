@@ -31,5 +31,9 @@
         <file>bg2.png</file>
         <file>drawcard.png</file>
         <file>combine.png</file>
+        <file>ee.png</file>
+        <file>csie.png</file>
+        <file>play.png</file>
+        <file>bg0.png</file>
     </qresource>
 </RCC>

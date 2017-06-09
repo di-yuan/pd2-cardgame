@@ -15,15 +15,15 @@ Game::Game(QWidget *parent)
 void Game::Init()
 {
     QImage bg;
-    bg.load(":/img/cover.jpg");
+    bg.load(":/img/bg0.png");
     bg = bg.scaled(375,667); // you can also change here
     this->setBackgroundBrush(bg);
     start = new Card();
     QPixmap s;
-    s.load(":/img/start.png");
-    s = s.scaled(140,200);
+    s.load(":/img/play.png");
+    s = s.scaled(133,44);
     start->setPixmap(s);
-    start->setPos(135,500);
+    start->setPos(135,550);
     scene->addItem(start);
 }
 
@@ -185,6 +185,7 @@ void Game::cardmanage()
 
 void Game::gameInit()
 {
+    screenMode = 2;
     sbutton->close();
     cbutton->close();
     scene->clear();
@@ -196,360 +197,350 @@ void Game::gameInit()
     if(i[0]%2==1)
     {
         n++;
-        card1 = new Card1();
-        QPixmap c1;
-        c1.load(":/img/1.png");
-        c1 = c1.scaled(70,70);
-        card1->setPixmap(c1);
+        button1 = new QPushButton(this);
+        button1->setIcon(QIcon(":/img/1.png"));
+        button1->setIconSize(QSize(70,70));
+        connect(button1,SIGNAL(clicked()),this,SLOT(weapon1()));
         if(n==1)
-            card1->setPos(22,569);
+            button1->setGeometry(22,569,70,70);
         if(n==2)
-            card1->setPos(109,569);
+            button1->setGeometry(109,569,70,70);
         if(n==3)
-            card1->setPos(196,569);
+            button1->setGeometry(196,569,70,70);
         if(n==4)
-            card1->setPos(213,569);
-        scene->addItem(card1);
+            button1->setGeometry(213,569,70,70);
+        button1->show();
     }
     if(i[1]%2==1)
     {
         n++;
-        card2 = new Card2();
-        QPixmap c2;
-        c2.load(":/img/2.png");
-        c2 = c2.scaled(70,70);
-        card2->setPixmap(c2);
+        button2 = new QPushButton(this);
+        button2->setIcon(QIcon(":/img/2.png"));
+        button2->setIconSize(QSize(70,70));
+        connect(button2,SIGNAL(clicked()),this,SLOT(weapon1()));
         if(n==1)
-            card2->setPos(22,569);
+            button2->setGeometry(22,569,70,70);
         if(n==2)
-            card2->setPos(109,569);
+            button2->setGeometry(109,569,70,70);
         if(n==3)
-            card2->setPos(196,569);
+            button2->setGeometry(196,569,70,70);
         if(n==4)
-            card2->setPos(213,569);
-        scene->addItem(card2);
+            button2->setGeometry(213,569,70,70);
+        button2->show();
     }
     if(i[2]%2==1)
     {
         n++;
-        card3 = new Card3();
-        QPixmap c3;
-        c3.load(":/img/3.png");
-        c3 = c3.scaled(70,70);
-        card3->setPixmap(c3);
+        button3 = new QPushButton(this);
+        button3->setIcon(QIcon(":/img/3.png"));
+        button3->setIconSize(QSize(70,70));
+        connect(button3,SIGNAL(clicked()),this,SLOT(weapon1()));
         if(n==1)
-            card3->setPos(22,569);
+            button3->setGeometry(22,569,70,70);
         if(n==2)
-            card3->setPos(109,569);
+            button3->setGeometry(109,569,70,70);
         if(n==3)
-            card3->setPos(196,569);
+            button3->setGeometry(196,569,70,70);
         if(n==4)
-            card3->setPos(213,569);
-        scene->addItem(card3);
+            button3->setGeometry(213,569,70,70);
+        button3->show();
     }
     if(i[3]%2==1)
     {
         n++;
-        card4 = new Card4();
-        QPixmap c4;
-        c4.load(":/img/4.png");
-        c4 = c4.scaled(70,70);
-        card4->setPixmap(c4);
+        button4 = new QPushButton(this);
+        button4->setIcon(QIcon(":/img/4.png"));
+        button4->setIconSize(QSize(70,70));
+        connect(button4,SIGNAL(clicked()),this,SLOT(weapon1()));
         if(n==1)
-            card4->setPos(22,569);
+            button4->setGeometry(22,569,70,70);
         if(n==2)
-            card4->setPos(109,569);
+            button4->setGeometry(109,569,70,70);
         if(n==3)
-            card4->setPos(196,569);
+            button4->setGeometry(196,569,70,70);
         if(n==4)
-            card4->setPos(283,569);
-        scene->addItem(card4);
+            button4->setGeometry(213,569,70,70);
+        button4->show();
     }
     if(i[4]%2==1)
     {
         n++;
-        card5 = new Card5();
-        QPixmap c5;
-        c5.load(":/img/5.png");
-        c5 = c5.scaled(70,70);
-        card5->setPixmap(c5);
+        button1 = new QPushButton(this);
+        button1->setIcon(QIcon(":/img/5.png"));
+        button1->setIconSize(QSize(70,70));
+        connect(button1,SIGNAL(clicked()),this,SLOT(weapon1()));
         if(n==1)
-            card5->setPos(22,569);
+            button1->setGeometry(22,569,70,70);
         if(n==2)
-            card5->setPos(109,569);
+            button1->setGeometry(109,569,70,70);
         if(n==3)
-            card5->setPos(196,569);
+            button1->setGeometry(196,569,70,70);
         if(n==4)
-            card5->setPos(283,569);
-        scene->addItem(card5);
+            button1->setGeometry(213,569,70,70);
+        button1->show();
     }
     if(i[5]%2==1)
     {
         n++;
-        card6 = new Card6();
-        QPixmap c6;
-        c6.load(":/img/2.png");
-        c6 = c6.scaled(70,70);
-        card6->setPixmap(c6);
+        button6 = new QPushButton(this);
+        button6->setIcon(QIcon(":/img/6.png"));
+        button6->setIconSize(QSize(70,70));
+        connect(button6,SIGNAL(clicked()),this,SLOT(weapon1()));
         if(n==1)
-            card6->setPos(22,569);
+            button6->setGeometry(22,569,70,70);
         if(n==2)
-            card6->setPos(109,569);
+            button6->setGeometry(109,569,70,70);
         if(n==3)
-            card6->setPos(196,569);
+            button6->setGeometry(196,569,70,70);
         if(n==4)
-            card6->setPos(283,569);
-        scene->addItem(card6);
+            button6->setGeometry(213,569,70,70);
+        button1->show();
     }
     if(i[6]%2==1)
     {
         n++;
-        card7 = new Card7();
-        QPixmap c7;
-        c7.load(":/img/7.png");
-        c7 = c7.scaled(70,70);
-        card7->setPixmap(c7);
+        button7 = new QPushButton(this);
+        button7->setIcon(QIcon(":/img/7.png"));
+        button7->setIconSize(QSize(70,70));
+        connect(button7,SIGNAL(clicked()),this,SLOT(weapon1()));
         if(n==1)
-            card7->setPos(22,569);
+            button7->setGeometry(22,569,70,70);
         if(n==2)
-            card7->setPos(109,569);
+            button7->setGeometry(109,569,70,70);
         if(n==3)
-            card7->setPos(196,569);
+            button7->setGeometry(196,569,70,70);
         if(n==4)
-            card7->setPos(283,569);
-        scene->addItem(card7);
+            button7->setGeometry(213,569,70,70);
+        button7->show();
     }
     if(i[7]%2==1)
     {
         n++;
-        card8 = new Card8();
-        QPixmap c8;
-        c8.load(":/img/8.png");
-        c8 = c8.scaled(70,70);
-        card8->setPixmap(c8);
+        button8 = new QPushButton(this);
+        button8->setIcon(QIcon(":/img/8.png"));
+        button8->setIconSize(QSize(70,70));
+        connect(button8,SIGNAL(clicked()),this,SLOT(weapon1()));
         if(n==1)
-            card8->setPos(22,569);
+            button8->setGeometry(22,569,70,70);
         if(n==2)
-            card8->setPos(109,569);
+            button8->setGeometry(109,569,70,70);
         if(n==3)
-            card8->setPos(196,569);
+            button8->setGeometry(196,569,70,70);
         if(n==4)
-            card8->setPos(283,569);
-        scene->addItem(card8);
+            button8->setGeometry(213,569,70,70);
+        button8->show();
     }
     if(i[8]%2==1)
     {
         n++;
-        card9 = new Card9();
-        QPixmap c9;
-        c9.load(":/img/9.png");
-        c9 = c9.scaled(70,70);
-        card9->setPixmap(c9);
+        button9 = new QPushButton(this);
+        button9->setIcon(QIcon(":/img/9.png"));
+        button9->setIconSize(QSize(70,70));
+        connect(button9,SIGNAL(clicked()),this,SLOT(weapon1()));
         if(n==1)
-            card9->setPos(22,569);
+            button9->setGeometry(22,569,70,70);
         if(n==2)
-            card9->setPos(109,569);
+            button9->setGeometry(109,569,70,70);
         if(n==3)
-            card9->setPos(196,569);
+            button9->setGeometry(196,569,70,70);
         if(n==4)
-            card9->setPos(283,569);
-        scene->addItem(card9);
+            button9->setGeometry(213,569,70,70);
+        button9->show();
     }
     if(i[9]%2==1)
     {
         n++;
-        card10 = new Card10();
-        QPixmap c10;
-        c10.load(":/img/10.png");
-        c10 = c10.scaled(70,70);
-        card10->setPixmap(c10);
+        button10 = new QPushButton(this);
+        button10->setIcon(QIcon(":/img/10.png"));
+        button10->setIconSize(QSize(70,70));
+        connect(button10,SIGNAL(clicked()),this,SLOT(weapon1()));
         if(n==1)
-            card10->setPos(22,569);
+            button10->setGeometry(22,569,70,70);
         if(n==2)
-            card10->setPos(109,569);
+            button10->setGeometry(109,569,70,70);
         if(n==3)
-            card10->setPos(196,569);
+            button10->setGeometry(196,569,70,70);
         if(n==4)
-            card10->setPos(283,569);
-        scene->addItem(card10);
+            button10->setGeometry(213,569,70,70);
+        button10->show();
     }
     if(i[10]%2==1)
     {
         n++;
-        card11 = new Card11();
-        QPixmap c11;
-        c11.load(":/img/11.png");
-        c11 = c11.scaled(70,70);
-        card11->setPixmap(c11);
+        button11 = new QPushButton(this);
+        button11->setIcon(QIcon(":/img/11.png"));
+        button11->setIconSize(QSize(70,70));
+        connect(button11,SIGNAL(clicked()),this,SLOT(weapon1()));
         if(n==1)
-            card11->setPos(22,569);
+            button11->setGeometry(22,569,70,70);
         if(n==2)
-            card11->setPos(109,569);
+            button11->setGeometry(109,569,70,70);
         if(n==3)
-            card11->setPos(196,569);
+            button11->setGeometry(196,569,70,70);
         if(n==4)
-            card11->setPos(283,569);
-        scene->addItem(card11);
+            button11->setGeometry(213,569,70,70);
+        button11->show();
     }
     if(i[11]%2==1)
     {
         n++;
-        card12 = new Card12();
-        QPixmap c12;
-        c12.load(":/img/12.png");
-        c12 = c12.scaled(70,70);
-        card12->setPixmap(c12);
+        button12 = new QPushButton(this);
+        button12->setIcon(QIcon(":/img/12.png"));
+        button12->setIconSize(QSize(70,70));
+        connect(button12,SIGNAL(clicked()),this,SLOT(weapon1()));
         if(n==1)
-            card12->setPos(22,569);
+            button12->setGeometry(22,569,70,70);
         if(n==2)
-            card12->setPos(109,569);
+            button12->setGeometry(109,569,70,70);
         if(n==3)
-            card12->setPos(196,569);
+            button12->setGeometry(196,569,70,70);
         if(n==4)
-            card12->setPos(283,569);
-        scene->addItem(card12);
+            button12->setGeometry(213,569,70,70);
+        button12->show();
     }
     if(i[12]%2==1)
     {
         n++;
-        QPixmap c13;
-        c13.load(":/img/13.png");
-        c13 = c13.scaled(70,70);
-        card13->setPixmap(c13);
+        button13 = new QPushButton(this);
+        button13->setIcon(QIcon(":/img/13.png"));
+        button13->setIconSize(QSize(70,70));
+        connect(button13,SIGNAL(clicked()),this,SLOT(weapon1()));
         if(n==1)
-            card13->setPos(22,569);
+            button13->setGeometry(22,569,70,70);
         if(n==2)
-            card13->setPos(109,569);
+            button13->setGeometry(109,569,70,70);
         if(n==3)
-            card13->setPos(196,569);
+            button13->setGeometry(196,569,70,70);
         if(n==4)
-            card13->setPos(283,569);
-        scene->addItem(card13);
+            button13->setGeometry(213,569,70,70);
+        button13->show();
     }
     if(i[13]%2==1)
     {
         n++;
-        QPixmap c14;
-        c14.load(":/img/14.png");
-        c14 = c14.scaled(70,70);
-        card14->setPixmap(c14);
+        button14 = new QPushButton(this);
+        button14->setIcon(QIcon(":/img/14.png"));
+        button14->setIconSize(QSize(70,70));
+        connect(button14,SIGNAL(clicked()),this,SLOT(weapon1()));
         if(n==1)
-            card14->setPos(22,569);
+            button14->setGeometry(22,569,70,70);
         if(n==2)
-            card14->setPos(109,569);
+            button14->setGeometry(109,569,70,70);
         if(n==3)
-            card14->setPos(196,569);
+            button14->setGeometry(196,569,70,70);
         if(n==4)
-            card14->setPos(283,569);
-        scene->addItem(card14);
+            button14->setGeometry(213,569,70,70);
+        button14->show();
     }
     if(i[14]%2==1)
     {
         n++;
-        QPixmap c15;
-        c15.load(":/img/15.png");
-        c15 = c15.scaled(70,70);
-        card15->setPixmap(c15);
+        button15 = new QPushButton(this);
+        button15->setIcon(QIcon(":/img/15.png"));
+        button15->setIconSize(QSize(70,70));
+        connect(button15,SIGNAL(clicked()),this,SLOT(weapon1()));
         if(n==1)
-            card15->setPos(22,569);
+            button15->setGeometry(22,569,70,70);
         if(n==2)
-            card15->setPos(109,569);
+            button15->setGeometry(109,569,70,70);
         if(n==3)
-            card15->setPos(196,569);
+            button15->setGeometry(196,569,70,70);
         if(n==4)
-            card15->setPos(283,569);
-        scene->addItem(card15);
+            button15->setGeometry(213,569,70,70);
+        button15->show();
     }
     if(i[15]%2==1)
     {
         n++;
-        card16 = new Card16();
-        QPixmap c16;
-        c16.load(":/img/16.png");
-        c16 = c16.scaled(70,70);
-        card16->setPixmap(c16);
+        button16 = new QPushButton(this);
+        button16->setIcon(QIcon(":/img/16.png"));
+        button16->setIconSize(QSize(70,70));
+        connect(button16,SIGNAL(clicked()),this,SLOT(weapon1()));
         if(n==1)
-            card16->setPos(22,569);
+            button16->setGeometry(22,569,70,70);
         if(n==2)
-            card16->setPos(109,569);
+            button16->setGeometry(109,569,70,70);
         if(n==3)
-            card16->setPos(196,569);
+            button16->setGeometry(196,569,70,70);
         if(n==4)
-            card16->setPos(283,569);
-        scene->addItem(card16);
+            button16->setGeometry(213,569,70,70);
+        button16->show();
     }
     if(i[16]%2==1)
     {
         n++;
-        card17 = new Card17();
-        QPixmap c17;
-        c17.load(":/img/17.png");
-        c17 = c17.scaled(70,70);
-        card17->setPixmap(c17);
+        button17 = new QPushButton(this);
+        button17->setIcon(QIcon(":/img/17.png"));
+        button17->setIconSize(QSize(70,70));
+        connect(button17,SIGNAL(clicked()),this,SLOT(weapon1()));
         if(n==1)
-            card17->setPos(22,569);
+            button17->setGeometry(22,569,70,70);
         if(n==2)
-            card17->setPos(109,569);
+            button17->setGeometry(109,569,70,70);
         if(n==3)
-            card17->setPos(196,569);
+            button17->setGeometry(196,569,70,70);
         if(n==4)
-            card17->setPos(283,569);
-        scene->addItem(card17);
+            button17->setGeometry(213,569,70,70);
+        button17->show();
     }
     if(i[17]%2==1)
     {
         n++;
-        card18 = new Card18();
-        QPixmap c18;
-        c18.load(":/img/18.png");
-        c18 = c18.scaled(70,70);
-        card18->setPixmap(c18);
+        button18 = new QPushButton(this);
+        button18->setIcon(QIcon(":/img/18.png"));
+        button18->setIconSize(QSize(70,70));
+        connect(button18,SIGNAL(clicked()),this,SLOT(weapon1()));
         if(n==1)
-            card18->setPos(22,569);
+            button18->setGeometry(22,569,70,70);
         if(n==2)
-            card18->setPos(109,569);
+            button18->setGeometry(109,569,70,70);
         if(n==3)
-            card18->setPos(196,569);
+            button18->setGeometry(196,569,70,70);
         if(n==4)
-            card18->setPos(283,569);
-        scene->addItem(card18);
+            button18->setGeometry(213,569,70,70);
+        button18->show();
     }
     if(i[18]%2==1)
     {
         n++;
-        card19 = new Card19();
-        QPixmap c19;
-        c19.load(":/img/19.png");
-        c19 = c19.scaled(70,70);
-        card19->setPixmap(c19);
+        button19 = new QPushButton(this);
+        button19->setIcon(QIcon(":/img/19.png"));
+        button19->setIconSize(QSize(70,70));
+        connect(button19,SIGNAL(clicked()),this,SLOT(weapon1()));
         if(n==1)
-            card19->setPos(22,569);
+            button19->setGeometry(22,569,70,70);
         if(n==2)
-            card19->setPos(109,569);
+            button19->setGeometry(109,569,70,70);
         if(n==3)
-            card19->setPos(196,569);
+            button19->setGeometry(196,569,70,70);
         if(n==4)
-            card19->setPos(283,569);
-        scene->addItem(card19);
+            button19->setGeometry(213,569,70,70);
+        button19->show();
     }
     if(i[19]%2==1)
     {
         n++;
-        card20 = new Card20();
-        QPixmap c20;
-        c20.load(":/img/20.png");
-        c20 = c20.scaled(70,70);
-        card20->setPixmap(c20);
+        button20 = new QPushButton(this);
+        button20->setIcon(QIcon(":/img/20.png"));
+        button20->setIconSize(QSize(70,70));
+        connect(button20,SIGNAL(clicked()),this,SLOT(weapon1()));
         if(n==1)
-            card20->setPos(22,569);
+            button20->setGeometry(22,569,70,70);
         if(n==2)
-            card20->setPos(109,569);
+            button20->setGeometry(109,569,70,70);
         if(n==3)
-            card20->setPos(196,569);
+            button20->setGeometry(196,569,70,70);
         if(n==4)
-            card20->setPos(283,569);
-        scene->addItem(card20);
+            button20->setGeometry(213,569,70,70);
+        button20->show();
     }
+}
+
+void Game::weapon1()
+{
+    Card1 * c1 = new Card1();
+    c1->setPos(20,220);
+    scene->addItem(c1);
 }
 
 void Game::mousePressEvent(QMouseEvent *event)
@@ -557,10 +548,10 @@ void Game::mousePressEvent(QMouseEvent *event)
     if(screenMode == 0)
         {
             //to start game
-            if(event->pos().x() > 135 && event->pos().x() <= 275)
+            if(event->pos().x() > 135 && event->pos().x() <= 268)
             {
                 // Now x is in range , judge y
-                if(event->pos().y() > 500 && event->pos().y() <= 700)
+                if(event->pos().y() > 550 && event->pos().y() <=594 )
                 {
                     screenMode = 1;
                     bgChange();
