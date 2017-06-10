@@ -12,10 +12,12 @@ public:
     Card6();
     Card * black;
     int i=0;
+    const int level=6;
+    int ballcount = 0;
+    int a = 40;
+    int circlecount;
 public slots:
     void go();
-private:
-    int level;
 };
 
 #endif // CARD6_H

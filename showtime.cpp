@@ -7,7 +7,7 @@ ShowTime::ShowTime(QGraphicsItem *parent): QGraphicsTextItem(parent)
     time = 60;
     setPlainText(QString::number(time));
     setDefaultTextColor(Qt::black);
-    setFont(QFont("ubuntu",20));
+    setFont(QFont("ubuntu",22));
 
     QTimer * timer = new QTimer();
 
@@ -21,7 +21,7 @@ void ShowTime::decrease()
     time--;
     setPlainText(QString::number(time));
     setDefaultTextColor(Qt::black);
-    setFont(QFont("ubuntu",20));
+    setFont(QFont("ubuntu",22));
 }
 
 int ShowTime::getTime()

@@ -1,16 +1,13 @@
 #ifndef CSIE_H
 #define CSIE_H
 
-#include <QObject>
 #include <QGraphicsPixmapItem>
+#include <QObject>
 
-class Csie: public QObject ,public QGraphicsPixmapItem
+class Csie : public QGraphicsPixmapItem
 {
-    Q_OBJECT
 public:
     Csie();
-
 };
-
 
 #endif // CSIE_H

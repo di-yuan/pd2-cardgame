@@ -12,10 +12,10 @@ public:
     Card4();
     Card * black;
     int i=0;
+    const int level=4;
+    int a=1;
 public slots:
     void go();
-private:
-    int level;
 };
 
 #endif // CARD4_H

@@ -37,7 +37,13 @@ SOURCES += main.cpp \
     card18.cpp \
     card19.cpp \
     card20.cpp \
-    csie.cpp
+    enemy.cpp \
+    bullet.cpp \
+    fireball.cpp \
+    csie.cpp \
+    ee.cpp \
+    hpi.cpp \
+    hpy.cpp
 
 HEADERS  += \
     game.h \
@@ -65,8 +71,13 @@ HEADERS  += \
     card18.h \
     card19.h \
     card20.h \
+    enemy.h \
+    bullet.h \
+    fireball.h \
     csie.h \
-    ee.h
+    ee.h \
+    hpi.h \
+    hpy.h
 
 FORMS    += mainwindow.ui
 

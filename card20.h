@@ -4,6 +4,7 @@
 #include <QObject>
 #include <QGraphicsPixmapItem>
 #include "card.h"
+#include <QKeyEvent>
 
 class Card20: public QObject,public QGraphicsPixmapItem
 {
@@ -12,10 +13,8 @@ public:
     Card20();
     Card * black;
     int i=0;
-public slots:
-    void go();
-private:
-    int level;
+    void keyPressEvent(QKeyEvent *event);
+    const int level=20;
 };
 
 #endif // CARD20_H

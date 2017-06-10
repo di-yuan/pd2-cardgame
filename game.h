@@ -32,6 +32,12 @@
 #include <QPushButton>
 #include <stdio.h>
 #include <stdlib.h>
+#include "enemy.h"
+#include "fireball.h"
+#include "csie.h"
+#include "ee.h"
+#include "hpi.h"
+#include "hpy.h"
 
 class Game: public QGraphicsView{
     Q_OBJECT
@@ -41,22 +47,40 @@ public:
     QGraphicsScene * scene;
 
     void Init();
-    void bgChange();
-    void cardmanage();
     void mousePressEvent(QMouseEvent *event);
     int getscreen();
+    void Displaygameoverwindow(QString texttodisplay,int k);
+
+    int numberofresult=0;
+    QString scoretodisplay1 = " ";
+    QString scoretodisplay2 = " ";
+    QString scoretodisplay3 = " ";
+    QString scoretodisplay4 = " ";
+    QString scoretodisplay5 = " ";
+    QString scoretodisplay6 = " ";
+    QString scoretodisplay7 = " ";
+    QString scoretodisplay8 = " ";
+    int a[20];
+
+    Hpi * hpi;
+    Hpy * hpy;
 
     Card * start;
-    Card * draw;
+    Card * recordboard;
+    Csie * csie;
+    Ee * ee;
+    Card * con;
     ShowTime *tt;
     Result *result;
     QPushButton * sbutton;
     QPushButton * cbutton;
+    QPushButton * dbutton;
+    QPushButton * qbutton;
+
+    Fireball * fireball;
 
     int screenMode;
-    int ran_card_1;
-    int ran_card_2;
-    int rand;
+    int rand,randx,randy;
     //  QTimer *timer;
     QTimer *timer1;
     QTimer *timer2;
@@ -81,10 +105,6 @@ public:
     Card19 *card19;
     Card20 *card20;
 
-    Card *card_1, *card_2;
-    Card *card_11, *card_12, *card_13, *card_14;
-    Card *card_21, *card_22, *card_23, *card_24;
-
     QPushButton * button1;
     QPushButton * button2;
     QPushButton * button3;
@@ -106,10 +126,22 @@ public:
     QPushButton * button19;
     QPushButton * button20;
 
+    Enemy * enemy1;
+    Enemy * enemy2;
+    Enemy * enemy3;
+    Enemy * enemy4;
+
 public slots:
+    void cardmanage();
     void gameInit();
+    void combine();
+    void drawcard();
+    void enemyShot();
+    void Gameover();
+    void change();
+    void closebutton();
     void weapon1();
-/*    void weapon2();
+    void weapon2();
     void weapon3();
     void weapon4();
     void weapon5();
@@ -127,7 +159,7 @@ public slots:
     void weapon17();
     void weapon18();
     void weapon19();
-    void weapon20();*/
+    void weapon20();
 
 private:
     int i[20];

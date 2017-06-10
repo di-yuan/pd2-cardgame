@@ -3,6 +3,7 @@
 
 #include <QObject>
 #include <QGraphicsPixmapItem>
+#include <QTimer>
 #include "card.h"
 
 class Card19: public QObject,public QGraphicsPixmapItem
@@ -12,10 +13,11 @@ public:
     Card19();
     Card * black;
     int i=0;
+    QPixmap c19;
+    QTimer * timer;
+    const int level=19;
 public slots:
     void go();
-private:
-    int level;
 };
 
 #endif // CARD19_H

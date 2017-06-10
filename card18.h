@@ -12,10 +12,9 @@ public:
     Card18();
     Card * black;
     int i=0;
+    const int level=18;
 public slots:
     void go();
-private:
-    int level;
 };
 
 #endif // CARD18_H

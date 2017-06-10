@@ -12,10 +12,10 @@ public:
     Card16();
     Card * black;
     int i=0;
+    const int level=16;
+    int step;
 public slots:
     void go();
-private:
-    int level;
 };
 
 #endif // CARD16_H

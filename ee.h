@@ -1,14 +1,14 @@
 #ifndef EE_H
 #define EE_H
 
-#include <QObject>
 #include <QGraphicsPixmapItem>
+#include <QObject>
 
-class Ee: public QObject ,public QGraphicsPixmapItem
+class Ee : public QGraphicsPixmapItem
 {
-    Q_OBJECT
 public:
     Ee();
-
 };
+
+
 #endif // EE_H

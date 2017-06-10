@@ -11,7 +11,6 @@ class ShowTime: public QGraphicsTextItem
 public:
     ShowTime(QGraphicsItem * parent=0);
     int getTime();
-private:
     int time;
 public slots:
     void decrease();
